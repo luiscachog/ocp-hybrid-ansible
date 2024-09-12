@@ -1,6 +1,6 @@
 all:
   children:
-    utility:
+    provisioner:
       hosts:
         localhost:
           ansible_connection: local

@@ -4,8 +4,8 @@ bin_dir: /home/centos/ocp-ansible/bin
 iso_tmp_dir: "{{base_dir}}"
 build_dir: "{{base_dir}}"
 
-# Utility host settings
-utility_host_packages:
+# provisioner host settings
+provisioner_host_packages:
   - httpd
   - tmux
   - git
@@ -15,7 +15,7 @@ utility_host_packages:
   - podman
   - syslinux
 
-utility_host_services:
+provisioner_host_services:
   - httpd
 
 isolinux_files:
@@ -24,11 +24,11 @@ isolinux_files:
   - ldlinux.c32
   - libcom32.c32
 
-utility_host: 172.18.42.211
-utility_host_ilo: "{{utility_host}}"
-utility_http_scheme: http
-utility_http_port: 80
-utility_host_container_runtime: podman
+provisioner_host: 172.18.42.211
+provisioner_host_ilo: "{{provisioner_host}}"
+provisioner_http_scheme: http
+provisioner_http_port: 80
+provisioner_host_container_runtime: podman
 
 coreos_installer_image: "quay.io/coreos/coreos-installer:release"
 fcct_image: "quay.io/coreos/fcct:release"
@@ -38,7 +38,7 @@ fcct_image: "quay.io/coreos/fcct:release"
 cluster_name: ocp2
 base_domain: lab.signal9.gg
 fips_mode: false
-utility_ssh_public_key: "REDACTED"
+provisioner_ssh_public_key: "REDACTED"
 
 # HTTP Proxy Settings
 proxy_enabled: false
