@@ -18,6 +18,6 @@ interfaces:
     gateway: 172.18.0.1
 disabled_interfaces:
   - bond0
-idrac_host: idrac-blade-5.oob.signal9.gg
-pm_type: idrac
-short_name: ocp2-worker-0
+ilo_host: ilo-hp-blade-5.oob.example.com
+pm_type: ilo
+short_name: ocp-worker-0
