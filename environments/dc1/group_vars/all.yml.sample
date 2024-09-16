@@ -14,6 +14,16 @@ provisioner_host_packages:
   - python3-pyvmomi
   - podman
   - syslinux
+  - git
+  - libvirt
+  - python3-libvirt
+  - python3-lxml
+  - qemu-kvm
+  - mkisofs
+  - python3-devel
+  - jq
+  - ipmitool
+  - dhcp-client
 
 provisioner_host_services:
   - httpd
