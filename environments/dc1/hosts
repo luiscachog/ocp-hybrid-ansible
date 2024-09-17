@@ -1,8 +1,8 @@
 all:
   children:
-    provisioner:
+    provisioners:
       hosts:
-        localhost:
+        provisioner:
           ansible_connection: local
     openshift_nodes:
       children:
