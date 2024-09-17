@@ -1,6 +1,7 @@
 # Base file locations for the playbook, must be writable to the user running ansible-playbook
 base_dir: /home/kni/ocp-ansible
 bin_dir: /home/kni/ocp-ansible/bin
+config_dir: /home/kni/ocp-ansible/config
 iso_tmp_dir: "{{base_dir}}"
 build_dir: "{{base_dir}}"
 
