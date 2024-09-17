@@ -1,3 +1,9 @@
+# OCP Version
+
+ocp_version_maj: "4"
+ocp_version_min: "4.16"
+ocp_version_patch: "4.16.0"
+
 # Base file locations for the playbook, must be writable to the user running ansible-playbook
 base_dir: /home/kni/ocp-ansible
 bin_dir: /home/kni/ocp-ansible/bin
@@ -79,17 +85,14 @@ sdn_settings:
   ipsec_enabled: true
 customize_network_operator_config: true
 
-ocp_version: '4.16.0'
-ocp_version_simple: '4.16'
-
 # Openshift Sources and Pull Secret
 source_urls:
-  installer: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-{{ ocp_version_simple }}/openshift-install-linux.tar.gz
-  client: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-{{ ocp_version_simple }}/openshift-client-linux.tar.gz
+  installer: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-{{ ocp_version_min }}/openshift-install-linux.tar.gz
+  client: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-{{ ocp_version_min }}/openshift-client-linux.tar.gz
 
-  rhcos_kernel: https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/{{ ocp_version_simple }}/latest/rhcos-live-kernel-x86_64
-  rhcos_initrd: https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/{{ ocp_version_simple }}/latest/rhcos-live-initramfs.x86_64.img
-  rhcos_image: https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/{{ ocp_version_simple }}/latest/rhcos-live-rootfs.x86_64.img
+  rhcos_kernel: https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/{{ ocp_version_min }}/latest/rhcos-live-kernel-x86_64
+  rhcos_initrd: https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/{{ ocp_version_min }}/latest/rhcos-live-initramfs.x86_64.img
+  rhcos_image: https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/{{ ocp_version_min }}/latest/rhcos-live-rootfs.x86_64.img
 
 # Pull secret may be added to secret.yml instead, comment out if moved.
 pull_secret: 'REDACTED'
