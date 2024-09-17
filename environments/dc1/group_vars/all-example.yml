@@ -2,6 +2,7 @@
 base_dir: /home/kni/ocp-ansible
 bin_dir: /home/kni/ocp-ansible/bin
 config_dir: /home/kni/ocp-ansible/config
+build_dir: /home/kni/ocp-ansible/build
 iso_tmp_dir: "{{base_dir}}"
 build_dir: "{{base_dir}}"
 
@@ -12,7 +13,6 @@ provisioner_host_packages:
   - git
   - genisoimage
   - xorriso
-  - python3-pyvmomi
   - podman
   - syslinux
   - git
