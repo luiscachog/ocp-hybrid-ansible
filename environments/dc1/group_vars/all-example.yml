@@ -29,6 +29,7 @@ provisioner_host_packages:
   - mkisofs
   - python3-devel
   - jq
+  - runc
   - ipmitool
   - dhcp-client
 
@@ -89,6 +90,7 @@ customize_network_operator_config: true
 source_urls:
   installer: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-{{ ocp_version_min }}/openshift-install-linux.tar.gz
   client: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-{{ ocp_version_min }}/openshift-client-linux.tar.gz
+  mirror_registry: https://mirror.openshift.com/pub/openshift-v4/clients/mirror-registry/latest/mirror-registry.tar.gz
 
   rhcos_kernel: https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/{{ ocp_version_min }}/latest/rhcos-live-kernel-x86_64
   rhcos_initrd: https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/{{ ocp_version_min }}/latest/rhcos-live-initramfs.x86_64.img
