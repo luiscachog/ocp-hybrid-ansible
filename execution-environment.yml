@@ -1,12 +1,25 @@
 ---
-version: 1
-
-build_arg_defaults:
-  EE_BASE_IMAGE: 'quay.io/ansible/ansible-runner:stable-2.12-devel'
-
-ansible_config: 'ansible.cfg'
-
+version: 3
+images:
+  base_image:
+    name: registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel9:latest
+options:
+  package_manager_path: /usr/bin/microdnf
 dependencies:
+  ansible_core:
+    # Require minimum of 2.15 to get ansible-inventory --limit option
+    package_pip: ansible-core>=2.15.0rc2,<2.16
+  ansible_runner:
+    package_pip: ansible-runner
   galaxy: collections/requirements.yml
   python: python-requirements.txt
-  #system: bindep.txt
+additional_build_files:
+  - src: ansible.cfg # copy contents from files to configs dir in build context
+    dest: configs
+
+additional_build_steps:
+  prepend_galaxy:
+    - COPY _build/configs/ansible.cfg /etc/ansible/ansible.cfg
+  append_base:
+    - RUN $PYCMD -m pip install -U pip
+
